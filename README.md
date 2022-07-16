@@ -25,13 +25,25 @@ Matching an Email: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 
 ### Anchors
 
+The two anchors in regex are ^ and $.
+
+Succeeding the first forward slash, you will find the circumflex (^) and a dollar sign ($) proceeding the final forward slash. Theses symbols are both considered anchors, which denote the beginning and end of the expression. The circumflex (^) denotes the start of a string. The dollar sign ($), on the other hand, denotes the end of the string.
+
 ### Quantifiers
 
+Quantifiers will measure and set the limit on the the number of characters that we are wanting to match in our Regex, we used `+` to communicate there is another sequence to be matched as a quantifier. We also use `{2,6}` as another quantifer to specify the input should be a minimum of 2 characrtors to a maximum of 6 characters.
+
 ### Grouping Constructs
+
 
 ### Bracket Expressions
 
 ### Character Classes
+
+A character class can define a set of characters that can occur in input strings to fullfill a match. The bracket expressions mentioned previously are examples of this. There are two more examples that can be found in our email example.
+
+The \d character class in the above code is looking for any digits, whereas a \D looks for non-digits, \s searches for space symbols, tab and newlines, \S looks for all but \s, \. any characters with the regex 's' flag, while the included \w character is looking for an alphanumeric character.
+
 
 ### The OR Operator
 

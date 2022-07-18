@@ -35,8 +35,21 @@ Quantifiers will measure and set the limit on the the number of characters that 
 
 ### Grouping Constructs
 
+Regular expressions are generally broken up into sections using parentheses () and is a way to treat multiple characters as one unit.
+
+Look at the entire expression within the parentheses.
+
+```
+/^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/
+```
+
+Between /^ and $/, there are three distinct character groups, ```([a-z0-9_.-]+), ([\da-z.-]+)```, and ```([a-z.]{2,6})```.
 
 ### Bracket Expressions
+
+A bracket expression is anything found within brackets ([]) that creates a range of characters that tell us what we want to match within the text. In our example, we can find three bracket expressions: ```[0-9], [a-z], and [_\.-].```
+
+[0-9] denotes any number between ```0 and 9. [a-z]``` denotes any lowercase leter from a to z. Lastly, ```[_\.-]``` denotes the special characters that can be used: underscore ```(_)```, backwards slash ```(/)```, period ```(.)```, and dash ```(-)```.
 
 ### Character Classes
 
@@ -47,10 +60,21 @@ The \d character class in the above code is looking for any digits, whereas a \D
 
 ### The OR Operator
 
+The purpose of an OR operator is to match the characters on the left or right of the operator, essentially serving as an or, as in and/or. Using the | as in m|M would match either m or an M from the string. If we had used ```https?:\/\/(www\.)?[\d-a|A``` it would search or a OR A.
+
 ### Flags
+
+Flags are used at the end of a regex, after a closing slash. They are tokens that will modify parameters of a search. Multiple flags can be set by writing one after another with NO spaces. Flags must be written in lowercase. This URL does not contain any flags.
+
+```
+https?:\/\/(www\.)?[\d-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)g
+```
 
 ### Character Escapes
 
+A character escape uses a backslash to force a regex to look at the character following the backslash instead of using it in a literal. In our example above, you can find one example, (\.). This denotes that we want the expressiion to look directly for a period (.) instead of the character class using the same symbol.
+
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+Hasnain Khalfan is currently enrolled in a full stack developer bootcamp course with UPENN Unversity.
+* [Hasnain's Github](https://github.com/hkhalfan1979/)  
